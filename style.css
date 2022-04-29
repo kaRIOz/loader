@@ -1,0 +1,56 @@
+body{
+    background-color: #eee;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    width: 100px;height: 100px;
+    position: relative;
+}
+
+.child1{
+    width: 50px;height: 50px;
+    background-color: hsl(14, 100%, 68%);
+    animation: spin 2s cubic-bezier(0.51, 0.97, 1, 1.35) infinite;
+}
+
+.child2{
+    width: 50px;height: 50px;
+    background-color: hsl(202, 100%, 68%);
+    position: absolute;
+    left:50px ;top: 50px;
+    animation: spin2 2s cubic-bezier(0.51, 0.97, 1, 1.35) infinite ;
+}
+@keyframes spin {
+    0%{
+        transform: rotateY(0);
+    }
+    25%{
+        transform: translateY(50px) rotateX(180deg);
+    }
+    50%{
+        transform: translateY(50px) translateX(50px) rotateX(180deg) rotateY(180deg)
+    }
+    75%{
+        transform: translateX(50px) rotateY(180deg) rotateX(0)
+    }
+
+}
+
+@keyframes spin2 {
+    0%{
+        transform: rotateX(0);
+    }
+    25%{
+        transform: translateY(-50px) rotateX(180deg);
+    }
+    50%{
+        transform: translateY(-50px) translateX(-50px) rotateX(180deg) rotateY(-180deg);
+    }
+    75%{
+        transform: translateX(-50px) rotateX(0) rotateY(180deg);
+    }
+}
